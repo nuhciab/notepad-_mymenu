@@ -135,7 +135,8 @@ const int foldingtMapper[MAPPER_TOTAL] =
 };
 
 using namespace std;
-typedef vector<vector<string>> vvstring;
+
+typedef vector< vector<string> > vvstring;
 
 // static vector<int> * foldVectorStatic;  // foldVectorStatic is used for debugging only, it should be commented out in production code !
 
@@ -930,7 +931,7 @@ static bool isInListForward(vvstring & openVector, StyleContext & sc, bool ignor
     // forward check for standard (sigle part) keywords
 
     skipForward = 0;
-    vector<vector<string>>::iterator iter1 = openVector.begin();
+    vector< vector<string> >::iterator iter1 = openVector.begin();
     vector<string>::iterator iter2;
 
     for (; iter1 != openVector.end(); ++iter1)
@@ -1654,7 +1655,7 @@ static void ColouriseUserDoc(unsigned int startPos, int length, int initStyle, W
     levelNext = levelCurrent;
 
     StyleContext sc(startPos, length, initStyle, styler);
-    for (; finished; dontMove?true:sc.Forward())
+    for (; finished; dontMove?true:(sc.Forward(), false))
     {
         dontMove = false;
         checkEOL = EOL_DEFAULT_VALUE;

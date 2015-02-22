@@ -31,7 +31,8 @@ endif
 .cxx.o:
 	$(CC) $(CXXFLAGS) -c $<
 
-ALL:	$(COMPONENT) $(LEXCOMPONENT) $(LEXLIB) ScintillaWinS.o
+ALL:	 $(LEXCOMPONENT)  ScintillaWinS.o
+#ALL:	$(COMPONENT) $(LEXCOMPONENT) $(LEXLIB) ScintillaWinS.o
 
 clean:
 	$(DEL) *.exe *.o *.obj *.dll *.res *.map *.plist
